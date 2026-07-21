@@ -12,12 +12,16 @@
 
   --animate-float: float 3s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
-  --animate-fade-in: fade-in 0.5s ease-in-out forwards;
-  --animate-fade-in-delay: fade-in 0.5s ease-in-out 0.5s forwards;
+  --animate-fade-in: fade-in 0.7s ease-in-out forwards;
+  --animate-fade-in-delay-1: fade-in 0.7s ease-in-out 0.2s forwards;
+  --animate-fade-in-delay-2: fade-in 0.7s ease-in-out 0.4s forwards;
+  --animate-fade-in-delay-3: fade-in 0.7s ease-in-out 0.7s forwards;
+  --animate-fade-in-delay-4: fade-in 0.7s ease-in-out 1.2s forwards;
   --animate-meteor: meteor 5s linear infinite;
 
   @keyframes float {
-    0%, 100% {
+    0%, 
+    100% {
       transform: translateY(0);
     }
     50% {
@@ -26,7 +30,8 @@
   }
 
   @keyframes pulse-subtle {
-    0%, 100% {
+    0%, 
+    100% {
       opacity: 1;
     }
     50% {
@@ -60,21 +65,27 @@
 
 @layer base {
   :root {
-    --border: 210 40% 96%;
-    --background: 0 0% 80%;
-    --foreground: 222.2 47.4% 11.2%;
-    --primary: 222.2 47.4% 11.2%;
+    --border: 214 32% 91%;
+
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --primary: 250 47% 60%;
     --primary-foreground: 210 40% 98%;
-    --card: 210 40% 96%;
+
+    --card: 0 0% 100%;
   }
 
   .dark {
-    --border: 210 40% 20%;
-    --background: 222.2 47.4% 11.2%;
-    --foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --card: 210 40% 20%;
+    --border: 217 33% 20%;
+
+    --background: 240 100% 5%;
+    --foreground: 213 31% 91%;
+
+    --primary: 250 65% 65%;
+    --primary-foreground: 213 31% 91%;
+
+    --card: 222 47% 8%;
   }
 
   * {
@@ -139,12 +150,12 @@
 
 @utility star {
   @apply absolute rounded-full bg-white;
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
 }
 
 @utility meteor {
   @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
 }
 
 #root {
