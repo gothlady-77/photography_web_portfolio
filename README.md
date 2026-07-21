@@ -6,7 +6,8 @@ As requested, this website follows a cyberpunk theme with professional elements.
 
 ## Functionality & Features
 
-TO-DO
+    - Light/Dark Mode Toggle: Users can click the icon in the top right to switch between a light and dark theme!
+    
 
 ## Code Lineup
 
