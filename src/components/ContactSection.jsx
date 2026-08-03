@@ -1,29 +1,47 @@
 import { Mail, Send } from "lucide-react";
 import { SiInstagram, SiBluesky } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
-import { useState } from "react";
-import { Description } from "@radix-ui/react-toast";
-
+import { useState, useRef } from "react";
+import emailjs from '@emailjs/browser';
 
 export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+const handleSubmit = (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    setIsSubmitting(true);
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    setTimeout(() => {
+  Promise.all([
+    emailjs.sendForm(serviceId, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, formRef.current, publicKey),
+    emailjs.sendForm(serviceId, import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID, formRef.current, publicKey),
+  ])
+    .then(() => {
       toast({
         title: "Message sent!",
-        Description: "Thank you for your message! I'll get back to you soon.",
+        description: "Thank you for your message! I'll get back to you soon.",
       });
-    }, 1500);
+      formRef.current.reset();
+    })
+    .catch((error) => {
+      console.error("EmailJS error:", error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or email me directly.",
+        variant: "destructive",
+      });
+    })
+    .finally(() => {
+      setIsSubmitting(false);
+    });
+};
 
-    setIsSubmitting(false);
-  };
   return (
     <section 
       id="contact"
@@ -87,16 +105,27 @@ export const ContactSection = () => {
                     </a>
                 </div>
               </div>
+              <div className="flex items-start space-x-4">
+                <div className="p-3 rounded-full bg-primary/20"> 
+                  <FaLinkedin className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                    <h4 className="font-medium"> LinkedIn</h4>
+                    <a 
+                      href="https://www.linkedin.com/in/freya-mason-304283426?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      @freyaprimrosesphotography
+                    </a>
+                </div>
+              </div>
             </div>
           </div>
 
-            <div 
-              className="bg-card p-8 rounded-lg shadow-xs"
-              onSubmit={handleSubmit}
-            >
+            <div className="bg-card p-8 rounded-lg shadow-xs">
               <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
 
-              <form className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label 
                     htmlFor="name" 

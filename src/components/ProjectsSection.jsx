@@ -1,4 +1,3 @@
-
 const projects = [
     {
       id: 1,
@@ -105,17 +104,17 @@ export const ProjectsSection = () => {
           experience working with a slew of genres.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
           {projects.map((project, key) => (
             <div 
-              key={key} 
+              key={project.id} 
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
-              <div className="h-48 overflow-hidden">
+              <div className="overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                  className="w-full h-auto transition-transform duration-500 group-hover:scale-110" 
                 />
               </div>
 

@@ -1,4 +1,4 @@
-import { Code, User, Briefcase } from "lucide-react";
+import { Camera, User, Briefcase } from "lucide-react";
 
 export const AboutMe = () => {
   return (
@@ -35,7 +35,9 @@ export const AboutMe = () => {
               </a>
               
               <a 
-                href="" 
+                href="/documents/Photography Resume - Freya Mason.pdf" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 My Resume
@@ -47,7 +49,7 @@ export const AboutMe = () => {
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <Code className="h-6 w-6 text-primary" />
+                  <Camera className="h-6 w-6 text-primary" />
                 </div>
 
                 <div className="text-left">

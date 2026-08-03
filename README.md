@@ -1,18 +1,30 @@
-# Photography Portfolio Website
+# 📸 Simple Photography Portfolio Website
 
-This repository contains a web-based photography portfolio for my gorgeous fiancé!
-Included is a landing page with multiple pages for displaying photos, contacting and booking, and a bio section.
-As requested, this website follows a cyberpunk theme with professional elements.
+![React.js](https://img.shields.io/badge/React.js-19.2.8-black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.3.3-38BDF8)
+![Toast](https://img.shields.io/badge/Toast-11.1.0-pink)
 
-## Functionality & Features
+A web-based photography portfolio crafted by me for my fiance. The webpage includes an About Me, Skills, Projects, and Contact section. The goal of this project is to improve my skills using React and TailwindCSS, while also providing a way to showcase the wonderful work of my partner.
 
-    - Light/Dark Mode Toggle: Users can click the icon in the top right to switch between a light and dark theme!
-    
+## 👉 Features
 
-## Code Lineup
+- **Light/Dark Theme Toggle** - Allows users to switch between light and dark themes.
+- **Navigation Buttons** - Users can click on labeled buttons to navigate throughout the webpage.
+- **Sorted Skills List** - Users can toggle which skills they'd like to see.
+- **Dynamic Photo Board** - Users can view dynamically sized photos.
+- **Links to Socials** - Users can navigate to the photographer's social media accounts.
+- **Email Messaging** - Users can message the photographer straight from the website.
 
-TO-DO
+## 💻 Tech Lineup
 
-## How to Install and Use
+- **Framework:** React.js 19 (App Router)
+- **Styling:** Tailwind CSS
+- **Notifications:** React-Toast
+- **Language:** JavaScript
+- **Email System:** Email.js
+- **Website Hosting:** Vercel
 
-TO-DO
+## 🔍 Viewing the Webpage
+
+**TODO**<br>
+Once deployed, users can access the webpage at this URL: *N/A*
