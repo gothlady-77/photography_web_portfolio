@@ -7,9 +7,10 @@ const skills = [
   {name: 'GIMP', level: '75', category: 'Post-Production'},
 
   // Photography
-  {name: 'Camera Settings', level: '90', category: 'Photography'},
-  {name: 'Composition', level: '85', category: 'Photography'},
-  {name: 'Lighting', level: '80', category: 'Photography'},
+  {name: 'Camera Settings', level: '100', category: 'Photography'},
+  {name: 'Composition', level: '100', category: 'Photography'},
+  {name: 'Prop Work', level: '90', category: 'Photography'},
+  {name: 'Lighting', level: '85', category: 'Photography'},
   {name: 'Theory', level: '75', category: 'Photography'},
 
   // Soft-Skills

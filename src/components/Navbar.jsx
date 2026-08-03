@@ -34,8 +34,13 @@ export const Navbar = () => {
           className="text-xl font-bold text-primary flex items-center"
           href = "#hero"
         >
+          <img 
+              src="/public/logo/freyas-logo.png" 
+              alt="Logo"
+              className="h-15 w-15"
+          />
           <span className="relative z-10">
-            <span className="ml-20 text-glow text-foreground">Freya Mason </span>{" "} 
+            <span className="ml-15 text-glow text-foreground">Freya Mason </span>{" "} 
             Photography
           </span>
         </a>

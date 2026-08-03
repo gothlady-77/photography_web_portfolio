@@ -23,7 +23,7 @@ export const AboutMe = () => {
 
             <p className="text-muted-foreground">
               My journey in photography began as a hobby, but it quickly evolved into 
-              my freelance career. I specialize in portrait and landscape photography, always striving to 
+              my freelance career. I specialize in portrait, landscape, and fine art photography. I'm always striving to 
               create images that evoke emotion and leave a lasting impression.
             </p>
 
@@ -57,7 +57,7 @@ export const AboutMe = () => {
                     Photography
                   </h4>
                   <p className="text-muted-foreground">
-                    Specializing in portrait and landscape photography
+                    Specializing in portrait, landscape, and fine art photography
                   </p>
                 </div>
               </div>
