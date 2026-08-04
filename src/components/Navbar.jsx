@@ -16,12 +16,30 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.screenY > 10);
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Lock body scroll while the mobile menu is open, preserving scroll position
+  useEffect(() => {
+    if (isMenuOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+
+      return () => {
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        window.scrollTo(0, scrollY);
+      };
+    }
+  }, [isMenuOpen]);
+
   return (
     <nav 
       className={cn(
@@ -30,20 +48,20 @@ export const Navbar = () => {
       )}
     >
       <div className="container flex items-center justify-between">
-      <a 
-        className="font-bold text-primary flex items-center gap-2 sm:gap-3 md:gap-5 shrink-0"
-        href="#hero"
-      >
-        <img 
-          src="/logo/freyas-logo.png" 
-          alt="Logo"
-          className="h-10 w-10 sm:h-12 sm:w-12 md:h-15 md:w-15 shrink-0"
-        />
-        <span className="relative z-10 leading-tight text-[clamp(0.9rem,4vw,1.25rem)]">
-          <span className="text-glow text-foreground">Freya Mason</span>{" "}
+        <a 
+          className="font-bold text-primary flex items-center gap-2 sm:gap-3 md:gap-5 shrink-0"
+          href="#hero"
+        >
+          <img 
+              src="/logo/freyas-logo.png" 
+              alt="Logo"
+              className="h-10 w-10 sm:h-12 sm:w-12 md:h-15 md:w-15 shrink-0"
+          />
+          <span className="relative z-10 leading-tight text-[clamp(0.9rem,4vw,1.25rem)]">
+            <span className="text-glow text-foreground">Freya Mason</span>{" "}
             Photography
           </span>
-      </a>
+        </a>
 
         {/*Desktop Nav Ver.*/}
         <div className="text-md mr-25 hidden md:flex space-x-8">
@@ -61,15 +79,15 @@ export const Navbar = () => {
         {/*Mobile Nav Ver.*/}
         <button 
           onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 text-foreground z-50" 
+          className="md:hidden fixed top-5 right-5 z-[60] p-2 text-foreground" 
           aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}{" "}
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
         
         <div 
           className={cn(
-            "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
+            "fixed inset-0 h-[100dvh] bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center overflow-y-auto overscroll-contain",
             "transition-all duration-300 md:hidden",
             isMenuOpen 
               ? "opacity-100 pointer-events-auto" 
