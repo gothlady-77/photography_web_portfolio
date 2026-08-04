@@ -27,5 +27,5 @@ A web-based photography portfolio crafted by me for my fiance. The webpage inclu
 
 ## 🔍 Viewing the Webpage
 
-**TODO**<br>
-Once deployed, users can access the webpage at this URL: *N/A*
+Users can access the webpage at this URL:<br>
+[freyamasonphotography.vercel.app](freyamasonphotography.vercel.app/)
