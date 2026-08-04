@@ -28,4 +28,4 @@ A web-based photography portfolio crafted by me for my fiance. The webpage inclu
 ## 🔍 Viewing the Webpage
 
 Users can access the webpage at this URL:<br>
-[freyamasonphotography.vercel.app](freyamasonphotography.vercel.app/)
+[freyamasonphotography.vercel.app](https://freyamasonphotography.vercel.app/)
