@@ -30,20 +30,20 @@ export const Navbar = () => {
       )}
     >
       <div className="container flex items-center justify-between">
-        <a 
-          className="text-xl font-bold text-primary flex items-center"
-          href = "#hero"
-        >
-          <img 
-              src="/public/logo/freyas-logo.png" 
-              alt="Logo"
-              className="h-15 w-15"
-          />
-          <span className="relative z-10">
-            <span className="ml-15 text-glow text-foreground">Freya Mason </span>{" "} 
+      <a 
+        className="font-bold text-primary flex items-center gap-2 sm:gap-3 md:gap-5 shrink-0"
+        href="#hero"
+      >
+        <img 
+          src="/logo/freyas-logo.png" 
+          alt="Logo"
+          className="h-10 w-10 sm:h-12 sm:w-12 md:h-15 md:w-15 shrink-0"
+        />
+        <span className="relative z-10 leading-tight text-[clamp(0.9rem,4vw,1.25rem)]">
+          <span className="text-glow text-foreground">Freya Mason</span>{" "}
             Photography
           </span>
-        </a>
+      </a>
 
         {/*Desktop Nav Ver.*/}
         <div className="text-md mr-25 hidden md:flex space-x-8">

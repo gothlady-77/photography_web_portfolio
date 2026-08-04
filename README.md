@@ -23,6 +23,7 @@ A web-based photography portfolio crafted by me for my fiance. The webpage inclu
 - **Language:** JavaScript
 - **Email System:** Email.js
 - **Website Hosting:** Vercel
+- **Debugging and Mobile UI Assistance:** Claude
 
 ## 🔍 Viewing the Webpage
 
